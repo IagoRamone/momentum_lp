@@ -1,103 +1,122 @@
-import Image from "next/image";
+'use client'
 
-export default function Home() {
+import Image from 'next/image'
+import Link from 'next/link'
+
+export default function HomePage() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <div className="min-h-screen bg-white flex flex-col font-[family-name:var(--font-geist-sans)]">
+      {/* Header */}
+      <header className="flex items-center justify-between px-8 sm:px-8 py-2 bg-white shadow-md fixed w-full z-40 bg-[#fff] shadow-lg">
+        <div className="flex items-center gap-2">
+          <Image src="/momentum_logo.png" alt="Logo" width={70} height={40} />
+          <h1 className="text-base font-semibold text-gray-700">Momentum Soluções</h1>
+        </div>
+        <div>
+          <Link
+          href="/login"
+          className="mr-2 text-sm cursor-pointer bg-violet-600 text-center border-2 border-gray-400 text-white rounded-lg py-2 px-4 transition-colors duration-200 hover:bg-white hover:text-violet-600"
+        >
+          Entrar
+        </Link>
+        <Link
+          href="/cadastro"
+          className="text-sm cursor-pointer text-center border-2 border-gray-400 text-violet-600 rounded-lg py-2 px-4 transition-colors duration-200 hover:bg-violet-600 hover:text-white"
+        >
+          Cadastrar
+        </Link>
+        </div>
+        
+        
+      </header>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+      {/* Main content */}
+      <main className="flex-1 mt-24 px-6 sm:px-20 py-16 bg-white text-center">
+        
+        <h2 className="text-4xl font-bold text-gray-600 mb-6">
+          Conecte. Desenvolva. Integre.
+        </h2>
+        <p className="text-lg text-gray-700 max-w-2xl mx-auto mb-10">
+          Sua plataforma central para <span className="text-violet-600">integração de dados</span>, <span className="text-violet-600">gestão operacional</span> e <span className="text-violet-600">desenvolvimento sob demanda</span>. Ideal para equipes que buscam <span className="text-violet-600">agilidade</span>, <span className="text-violet-600">eficiência</span> e <span className="text-violet-600">controle total</span>.
+        </p>
+
+        <div className="flex flex-col sm:flex-row justify-center gap-4">
+          <Link
+            href="/login"
+            className="text-xl cursor-pointer text-center bg-violet-600 border-2 border-gray-400 text-white rounded-lg py-2 px-4 transition-colors duration-200 hover:bg-white hover:text-violet-600"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
+            Acessar Plataforma
+          </Link>
           <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="#beneficios"
+            className="text-xl cursor-pointer bg-white text-center border-2 border-gray-400 text-violet-600 rounded-lg py-2 px-4 transition-colors duration-200 hover:bg-violet-800 hover:text-white"
           >
-            Read our docs
+            Saiba mais
           </a>
         </div>
       </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+
+      {/* Highlights */}
+      <section
+        id="beneficios"
+        className="bg-white py-20 px-6 sm:px-20 text-center"
+      >
+        <h3 className="text-2xl font-semibold text-gray-600 mb-12">
+          O que oferecemos
+        </h3>
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
+          <div className="p-6 rounded shadow shadow-xl">
+            <h4 className="font-semibold text-violet-600 text-lg mb-2 ">Integração de Sistemas</h4>
+            <p className="text-sm text-gray-600">
+              Conecte ERPs, CRMs, APIs externas e bancos de dados com fluidez e segurança.
+            </p>
+          </div>
+          <div className="p-6 rounded shadow shadow-xl">
+            <h4 className="font-semibold text-violet-600 text-lg mb-2 ">Ambiente de Desenvolvimento</h4>
+            <p className="text-sm text-gray-600">
+              Ferramentas, métricas e recursos para sua equipe técnica inovar e evoluir continuamente.
+            </p>
+          </div>
+          <div className="p-6 rounded shadow shadow-xl">
+            <h4 className="font-semibold text-violet-600 text-lg mb-2">Gestão Unificada</h4>
+            <p className="text-sm text-gray-600">
+              Gerencie processos, usuários, integrações e muito mais em um único lugar.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/*Serviços */}
+      <section id="servicos" className="bg-white py-20 px-6 sm:px-20 text-center">
+      <h3 className="text-2xl font-semibold text-gray-600 mb-12">Nossos Serviços</h3>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
+        <div className="p-6 border rounded shadow">
+          <h4 className="text-violet-600 font-semibold text-lg mb-2">Automação de Processos</h4>
+          <p className="text-sm text-gray-700">Criamos fluxos automáticos que economizam tempo e reduzem erros operacionais.</p>
+        </div>
+        <div className="p-6 border rounded shadow">
+          <h4 className="text-violet-600 font-semibold text-lg mb-2">Integração com iFood</h4>
+          <p className="text-sm text-gray-700">Unimos dados da sua operação no iFood com sistemas internos para uma gestão completa.</p>
+        </div>
+        <div className="p-6 border rounded shadow">
+          <h4 className="text-violet-600 font-semibold text-lg mb-2">Dashboards Personalizados</h4>
+          <p className="text-sm text-gray-700">Visualize os indicadores mais importantes para o seu negócio com gráficos intuitivos.</p>
+        </div>
+      </div>
+    </section>
+
+
+      {/* Footer */}
+      <footer className="bg-gray-100 text-center py-6 text-sm text-gray-600">
+  <div className="mb-2">
+    <Link href="#servicos" className="mx-2 hover:underline">Serviços</Link>
+    <Link href="#beneficios" className="mx-2 hover:underline">Benefícios</Link>
+    <Link href="mailto:contato@momentum.com" className="mx-2 hover:underline">E-mail</Link>
+    <Link href="https://wa.me/SEUNUMERO" className="mx-2 hover:underline">WhatsApp</Link>
+  </div>
+  <div>© {new Date().getFullYear()} Momentum Soluções. Todos os direitos reservados.</div>
+</footer>
+
     </div>
-  );
+  )
 }
